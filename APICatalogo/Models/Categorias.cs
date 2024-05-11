@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICatalogo.Models;
 
-[Table("Categoria")] //DataAnnotations
-public class Categoria {
+[Table("Categorias")] //DataAnnotations
+public class Categorias {
 
-    public Categoria() {
-        Produtos = new Collection<Produto>();
+    public Categorias() {
+        Produtos = new Collection<Produtos>();
     }
 
     [Key] // DataAnnotations
@@ -21,5 +21,5 @@ public class Categoria {
     [Required]
     [StringLength(300)] // DataAnnotations
     public string? ImagemUrl { get; set; }
-    public ICollection<Produto>? Produtos { get; set; }  // Define uma chave estrangeira
+    public ICollection<Produtos>? Produtos { get; set; }  // Define uma chave estrangeira
 }

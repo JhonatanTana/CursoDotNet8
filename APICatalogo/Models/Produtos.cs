@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICatalogo.Models;
-[Table("Produto")] // DataAnnotations
-public class Produto {
+[Table("Produtos")] // DataAnnotations
+public class Produtos {
 
     [Key] // DataAnnotations
     public int ProdutoId { get; set; }
@@ -24,7 +24,7 @@ public class Produto {
     [StringLength(300)] // DataAnnotations
     public string? ImagemUrl { get; set; }
     public float Estoque { get; set; }
-    public DateTime DataCadatro { get; set; }
+    public DateTime DataCadastro { get; set; }
     public int CategoriaId { get; set; } // Relaciona a chave estrangeira
-    public Categoria? Categoria { get; set; }  // Relaciona a chave estrangeira
+    public Categorias? Categoria { get; set; }  // Relaciona a chave estrangeira
 }
