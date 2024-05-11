@@ -103,3 +103,4 @@ D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\refint\A
 D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\APICatalogo.pdb
 D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\APICatalogo.genruntimeconfig.cache
 D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\ref\APICatalogo.dll
+D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\APICatalogo.sourcelink.json
