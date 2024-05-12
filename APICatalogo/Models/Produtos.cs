@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICatalogo.Models;
 [Table("Produtos")] // DataAnnotations
@@ -26,5 +27,6 @@ public class Produtos {
     public float Estoque { get; set; }
     public DateTime DataCadastro { get; set; }
     public int CategoriaId { get; set; } // Relaciona a chave estrangeira
+    [JsonIgnore]
     public Categorias? Categoria { get; set; }  // Relaciona a chave estrangeira
 }

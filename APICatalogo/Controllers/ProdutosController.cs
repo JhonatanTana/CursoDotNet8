@@ -1,6 +1,5 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +18,7 @@ namespace APICatalogo.Controllers {
         [HttpGet]  // Retorna os produtos
         public ActionResult<IEnumerable<Produtos>> Get() {
 
-            var produtos = _context.Produtos.ToList();
+            var produtos = _context.Produtos.Take(10).ToList(); // Limita a 10 registros
 
             if (produtos is null) {
                 return NotFound("Produstos não encontrados ...");
