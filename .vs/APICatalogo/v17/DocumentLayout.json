@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\models\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\models\\produtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\validations\\primeiraletramaiusculaattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\validations\\primeiraletramaiusculaattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CategoriasController.cs",
-              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Controllers\\CategoriasController.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriasController.cs",
-              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Controllers\\CategoriasController.cs",
-              "RelativeToolTip": "APICatalogo\\Controllers\\CategoriasController.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAswIMAAAA0AAAA",
+              "Title": "Produtos.cs",
+              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Models\\Produtos.cs",
+              "RelativeDocumentMoniker": "APICatalogo\\Models\\Produtos.cs",
+              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Models\\Produtos.cs",
+              "RelativeToolTip": "APICatalogo\\Models\\Produtos.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAswCQAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T01:23:47.314Z",
+              "WhenOpened": "2024-05-12T18:52:33.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PrimeiraLetraMaiusculaAttribute.cs",
+              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Validations\\PrimeiraLetraMaiusculaAttribute.cs",
+              "RelativeDocumentMoniker": "APICatalogo\\Validations\\PrimeiraLetraMaiusculaAttribute.cs",
+              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Validations\\PrimeiraLetraMaiusculaAttribute.cs",
+              "RelativeToolTip": "APICatalogo\\Validations\\PrimeiraLetraMaiusculaAttribute.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-12T18:45:15.392Z",
               "EditorCaption": ""
             }
           ]

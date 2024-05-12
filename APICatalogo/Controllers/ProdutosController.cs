@@ -28,9 +28,9 @@ namespace APICatalogo.Controllers {
         }
 
         [HttpGet("{id:int}", Name ="ObterProduto")] // Retorna um produto especificado pelo ID
-        public ActionResult<Produtos> Get(int id) {
+        public async Task<ActionResult<Produtos>> Get(int id) { // Metodo Assincrono
 
-            var produtos = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+            var produtos = await _context.Produtos.FirstOrDefaultAsync(p => p.ProdutoId == id);
 
             if (produtos is null) {
                 return NotFound("Produstos não encontrados ...");

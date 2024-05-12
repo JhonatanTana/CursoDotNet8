@@ -2,3 +2,5 @@
 /.vs/APICatalogo/FileContentIndex
 /APICatalogo/bin/Debug
 /APICatalogo/obj
+/APICatalogo/bin
+/.vs
