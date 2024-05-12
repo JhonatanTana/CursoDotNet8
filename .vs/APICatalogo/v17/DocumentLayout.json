@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\extensions\\apiexceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\extensions\\apiexceptionmiddlewareextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\models\\errordetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\models\\errordetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,40 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Program.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Program.cs",
-              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Program.cs",
-              "RelativeToolTip": "APICatalogo\\Program.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAABoAAAAjAAAA",
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriasController.cs",
+              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "APICatalogo\\Controllers\\CategoriasController.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAADwvzgAAAB1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T22:01:25.703Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApiExceptionMiddlewareExtensions.cs",
-              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Extensions\\ApiExceptionMiddlewareExtensions.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Extensions\\ApiExceptionMiddlewareExtensions.cs",
-              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Extensions\\ApiExceptionMiddlewareExtensions.cs",
-              "RelativeToolTip": "APICatalogo\\Extensions\\ApiExceptionMiddlewareExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T21:52:57.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ErrorDetails.cs",
-              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Models\\ErrorDetails.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Models\\ErrorDetails.cs",
-              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Models\\ErrorDetails.cs",
-              "RelativeToolTip": "APICatalogo\\Models\\ErrorDetails.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T21:48:26.243Z",
+              "WhenOpened": "2024-05-12T22:55:25.208Z",
               "EditorCaption": ""
             }
           ]

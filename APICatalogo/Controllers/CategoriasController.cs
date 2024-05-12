@@ -2,6 +2,7 @@
 using APICatalogo.Context;
 using APICatalogo.Models;
 using Microsoft.EntityFrameworkCore;
+using APICatalogo.Filters;
 
 namespace APICatalogo.Controllers {
 
@@ -10,20 +11,27 @@ namespace APICatalogo.Controllers {
     public class CategoriasController : Controller {
 
         private readonly AppDbContext _context;
-        public CategoriasController(AppDbContext context) {
+        private readonly ILogger _logger;
+
+        public CategoriasController(AppDbContext context, ILogger<CategoriasController> logger  ) {
             _context = context;
+            _logger = logger;
         }
 
         [HttpGet("produtos")]
         public ActionResult<IEnumerable<Categorias>> GetcategoriasProdutos() {
+
+            _logger.LogInformation("================================ GET api/categorias/produtos ==================================");
             return _context.Categorias.Include(p => p.Produtos).ToList();
         }
 
         [HttpGet]
+        [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Categorias>> Get() {
             
             try {
 
+                _logger.LogInformation("================================ GET api/categorias ==================================");
                 return _context.Categorias.AsNoTracking().ToList(); // rastreamento desligado
 
             }
@@ -41,9 +49,12 @@ namespace APICatalogo.Controllers {
 
             try {
 
+                _logger.LogInformation($"================================ GET api/categorias/id = {id} ==================================");
                 var categoria = _context.Categorias.FirstOrDefault(p => p.CategoriaId == id);
 
                 if (categoria == null) {
+
+                    _logger.LogInformation($"================================ GET api/categorias/id = {id} NOT FOUND ==================================");
                     return NotFound("Categoria nao encontrada ...");
                 }
 

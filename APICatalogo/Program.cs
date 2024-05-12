@@ -1,5 +1,6 @@
 using APICatalogo.Context;
 using APICatalogo.Extensions;
+using APICatalogo.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -9,6 +10,8 @@ builder.Services.AddControllers()
     .AddJsonOptions(options =>
         options.JsonSerializerOptions.
             ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+builder.Services.AddScoped<ApiLoggingFilter>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
