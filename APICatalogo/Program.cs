@@ -8,24 +8,29 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Tratamento de Excessoes e Ignorando Ciclos de Repetição
 builder.Services.AddControllers(options => {
     options.Filters.Add(typeof(ApiExceptionFilter));
 }).AddJsonOptions(options => {
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
-builder.Services.AddScoped<ApiLoggingFilter>();
-builder.Services.AddScoped<ICategoriaRepository, CategoryRepository>();
+// Repositórios
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Conexao Banco de Dados
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseMySql(mySqlConnection, 
     ServerVersion.AutoDetect(mySqlConnection)));
 
+// Logs
+builder.Services.AddScoped<ApiLoggingFilter>();
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration {
 
     LogLevel = LogLevel.Information

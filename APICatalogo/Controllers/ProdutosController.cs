@@ -1,5 +1,6 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Models;
+using APICatalogo.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,34 +10,34 @@ namespace APICatalogo.Controllers {
     [ApiController]
     public class ProdutosController : Controller {
 
-        private readonly AppDbContext _context;
+        private readonly IProdutoRepository _repository;
 
-        public ProdutosController(AppDbContext context) {
-            _context = context;
+        public ProdutosController(IProdutoRepository repository) {
+            _repository = repository;
         }
 
         [HttpGet]  // Retorna os produtos
         public ActionResult<IEnumerable<Produtos>> Get() {
 
-            var produtos = _context.Produtos.Take(10).ToList(); // Limita a 10 registros
+            var produtos = _repository.GetProdutos().ToList();
 
             if (produtos is null) {
                 return NotFound("Produstos não encontrados ...");
             }
 
-            return produtos;
+            return Ok(produtos);
         }
 
-        [HttpGet("{id:int}", Name ="ObterProduto")] // Retorna um produto especificado pelo ID
-        public async Task<ActionResult<Produtos>> Get(int id) { // Metodo Assincrono
+        [HttpGet("{id:int}", Name = "ObterProduto")] // Retorna um produto especificado pelo ID
+        public ActionResult<Produtos> Get(int id) { 
 
-            var produtos = await _context.Produtos.FirstOrDefaultAsync(p => p.ProdutoId == id);
+            var produtos = _repository.GetProdutos(id);
 
             if (produtos is null) {
                 return NotFound("Produstos não encontrados ...");
             }
 
-            return produtos;
+            return Ok(produtos);
         }
 
         [HttpPost]  // Adiciona um produto
@@ -46,11 +47,10 @@ namespace APICatalogo.Controllers {
                 return BadRequest("Erro ao cadastrar o produto ...");
             }
 
-            _context.Produtos.Add(produto);
-            _context.SaveChanges();
+            var novoProduto = _repository.Create(produto);
 
             return new CreatedAtRouteResult("ObterProduto", 
-                new { id = produto.ProdutoId }, produto);
+                new { id = novoProduto.ProdutoId }, novoProduto);
         }
 
         [HttpPut("{Id:int}")] // Edita o produto por completo
@@ -60,26 +60,29 @@ namespace APICatalogo.Controllers {
                 return BadRequest("Erro ao editar o produto ...");
             }
 
-            _context.Entry(produto).State = EntityState.Modified;
-            _context.SaveChanges();
+            bool atualizado = _repository.Update(produto);
 
-            return Ok(produto);
+            if (atualizado) {
 
+                return Ok(produto);
+            } else {
+
+                return StatusCode(500, $"Falha ao atualiza o produto {Id}");
+            }
         }
 
         [HttpDelete("{id:int}")] // Deleta o produto pelo ID
         public ActionResult Delete(int id) {
-            var produto = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
-            //var produto = _context.Produtos.Find(id);
+            
+            bool deletado = _repository.Delete(id);
 
-            if (produto is null) {
-                return NotFound("Produto não localizado...");
+            if (deletado) { 
+                
+                return Ok($"O produto com { id } foi excluido ...");
+            }else {
+
+                return StatusCode(500, $"Falha ao excluir o produto { id }");
             }
-            _context.Produtos.Remove(produto);
-            _context.SaveChanges();
-
-            return Ok(produto);
         }
-
     }
 }

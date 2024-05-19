@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICatalogo.Models;
 
@@ -21,5 +22,7 @@ public class Categorias {
     [Required]
     [StringLength(300)] // DataAnnotations
     public string? ImagemUrl { get; set; }
+
+    [JsonIgnore] // DataAnnotations
     public ICollection<Produtos>? Produtos { get; set; }  // Define uma chave estrangeira
 }

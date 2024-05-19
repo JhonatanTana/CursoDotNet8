@@ -3,11 +3,11 @@ using APICatalogo.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace APICatalogo.Repositories;
-public class CategoryRepository : ICategoriaRepository {
+public class CategoriaRepository : ICategoriaRepository {
 
     private readonly AppDbContext _context;
 
-    public CategoryRepository(AppDbContext context) {
+    public CategoriaRepository(AppDbContext context) {
         
         _context = context;
     }
