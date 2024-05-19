@@ -18,6 +18,7 @@ builder.Services.AddControllers(options => {
 // Repositórios
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
