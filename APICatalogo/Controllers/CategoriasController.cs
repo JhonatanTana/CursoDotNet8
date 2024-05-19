@@ -3,6 +3,7 @@ using APICatalogo.Context;
 using APICatalogo.Models;
 using Microsoft.EntityFrameworkCore;
 using APICatalogo.Filters;
+using APICatalogo.Repositories;
 
 namespace APICatalogo.Controllers {
 
@@ -10,90 +11,86 @@ namespace APICatalogo.Controllers {
     [ApiController]
     public class CategoriasController : Controller {
 
-        private readonly AppDbContext _context;
+        private readonly ICategoriaRepository _repository;
         private readonly ILogger _logger;
 
-        public CategoriasController(AppDbContext context, ILogger<CategoriasController> logger  ) {
-            _context = context;
+        public CategoriasController(ICategoriaRepository repository, ILogger<CategoriasController> logger  ) {
+            _repository = repository;
             _logger = logger;
         }
 
-        [HttpGet("produtos")]
-        public ActionResult<IEnumerable<Categorias>> GetcategoriasProdutos() {
-
-            _logger.LogInformation("================================ GET api/categorias/produtos ==================================");
-            return _context.Categorias.Include(p => p.Produtos).ToList();
-        }
-
+        // Obtem todas as categorias
         [HttpGet]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public ActionResult<IEnumerable<Categorias>> Get() {
 
-            _logger.LogInformation("================================ GET api/categorias ==================================");
-            return _context.Categorias.AsNoTracking().ToList(); // rastreamento desligado
-
-        }
-
-        [HttpGet("{id:int}", Name ="ObterCategoria")]
-        public ActionResult<Categorias> Get(int id) {
-            
-            _logger.LogInformation($"================================ GET api/categorias/id = {id} ==================================");
-            var categoria = _context.Categorias.FirstOrDefault(p => p.CategoriaId == id);
-
-            if (categoria == null) {
-
-                _logger.LogInformation($"================================ GET api/categorias/id = {id} NOT FOUND ==================================");
-                return NotFound("Categoria nao encontrada ...");
-            }
-
-            return Ok(categoria);
-
-        }
-
-        [HttpPost]
-        public ActionResult Post (Categorias categorias) {
-
-
-            if (categorias == null) {
-                return BadRequest();
-            }
-
-            _context.Categorias.Add(categorias);
-            _context.SaveChanges();
-
-            return new CreatedAtRouteResult("ObterCategoria",
-                new { id = categorias.CategoriaId }, categorias);
-
-        }
-
-        [HttpPut("{id int}")]
-        public ActionResult Put(int id, Categorias categorias) {
-
-            if (id != categorias.CategoriaId) {
-                return BadRequest();
-            }
-
-            _context.Entry(categorias).State = EntityState.Modified;
-            _context.SaveChanges();
-
+            var categorias = _repository.GetCategorias();
             return Ok(categorias);
 
         }
 
-        [HttpDelete("{id:int}")]
-        public ActionResult<Categorias> Delete(int id) {
+        // Obtem as categoria por ID
+        [HttpGet("{id:int}", Name ="ObterCategoria")]
+        public ActionResult<Categorias> Get(int id) {
+            
+            var categoria = _repository.GetCategorias(id);
 
-            var categoria = _context.Categorias.FirstOrDefault(p => p.CategoriaId == id);
+            if (categoria is null) {
 
-            if (categoria == null) {
-                return NotFound();
+                _logger.LogWarning($"Categoria com id={ id } nao encontrada ...");
+                return NotFound($"Categoria com id={ id } nao encontrada ...");
             }
-
-            _context.Categorias.Remove(categoria);
-            _context.SaveChanges();
 
             return Ok(categoria);
 
+        }
+
+        // Adiciona categorias
+        [HttpPost]
+        public ActionResult Post (Categorias categorias) {
+
+            if (categorias is null) {
+
+                _logger.LogWarning($"Dados Inválidos ...");
+                return BadRequest($"Dados Inválidos ...");
+            }
+            
+            var categoriaCriada = _repository.Create(categorias);
+
+            return new CreatedAtRouteResult("ObterCategoria",
+                new { id = categoriaCriada.CategoriaId }, categoriaCriada);
+
+        }
+
+        // Atualiza a categoria
+        [HttpPut("{id int}")]
+        public ActionResult Put(int id, Categorias categorias) {
+            
+            if (categorias is null) {
+
+                _logger.LogWarning($"Dados Inválidos ...");
+                return BadRequest($"Dados Inválidos ...");
+            }
+
+            var categoria = _repository.Update(categorias);
+            return Ok(categorias);
+
+        }
+
+        // Deleta as categorias
+        [HttpDelete("{id:int}")]
+        public ActionResult<Categorias> Delete(int id) {
+
+            var categoria = _repository.GetCategorias(id);
+
+            if (categoria is null) {
+
+                _logger.LogWarning($"Categoria com id={ id } nao encontrada ...");
+                return NotFound($"Categoria com id={ id } nao encontrada ...");
+            }
+            
+            var categoriaExcluida = _repository.Delete(id);
+            return Ok(categoriaExcluida);
         }
     }
 }
