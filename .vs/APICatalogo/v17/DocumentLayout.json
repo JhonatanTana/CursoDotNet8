@@ -5,14 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\repositories\\categoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|d:\\documentos\\documents\\vscode\\apicatalogo\\apicatalogo\\models\\categorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C609A2C-5113-4D61-AB80-FF947127EDDF}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\models\\categorias.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,41 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CategoriaRepository.cs",
-              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Repositories\\CategoriaRepository.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Repositories\\CategoriaRepository.cs",
-              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Repositories\\CategoriaRepository.cs",
-              "RelativeToolTip": "APICatalogo\\Repositories\\CategoriaRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T01:43:23.178Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CategoriasController.cs",
               "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Controllers\\CategoriasController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriasController.cs",
               "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Controllers\\CategoriasController.cs",
               "RelativeToolTip": "APICatalogo\\Controllers\\CategoriasController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAcwCoAAAAjAAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAkwFEAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T01:27:02.913Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Categorias.cs",
-              "DocumentMoniker": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Models\\Categorias.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Models\\Categorias.cs",
-              "ToolTip": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\Models\\Categorias.cs",
-              "RelativeToolTip": "APICatalogo\\Models\\Categorias.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T01:26:16.815Z",
               "EditorCaption": ""
             }
           ]
