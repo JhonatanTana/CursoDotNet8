@@ -63,3 +63,207 @@ Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text
 SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
 FROM `Produtos` AS `p`
 Information: 0 - Application is shutting down...
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:47:11
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:47:11
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:47:35
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:47:35
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:48:02
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:48:03
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 20101 - Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+WHERE `c`.`CategoriaId` = @__id_0
+LIMIT 1
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:51:24
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 20:51:24
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:12:37
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:12:38
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 0 - Application is shutting down...
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:16:35
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:16:35
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:18:16
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:18:16
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 20101 - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Error: 0 - Ocorreu uma exceção nao tratada: Status Code 500
+Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 20101 - Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 20101 - Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Error: 1 - An unhandled exception has occurred while executing the request.
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Information: 20101 - Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+WHERE `p`.`ProdutoId` = @__id_0
+LIMIT 1
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:38:40
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 21:38:40
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################

@@ -104,3 +104,6 @@ D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\APICatal
 D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\APICatalogo.genruntimeconfig.cache
 D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\ref\APICatalogo.dll
 D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\obj\Debug\net8.0\APICatalogo.sourcelink.json
+D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\bin\Debug\net8.0\Autofac.dll
+D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\bin\Debug\net8.0\AutoMapper.dll
+D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo\bin\Debug\net8.0\AutoMapper.Contrib.Autofac.DependencyInjection.dll

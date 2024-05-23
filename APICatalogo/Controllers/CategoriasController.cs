@@ -26,7 +26,10 @@ namespace APICatalogo.Controllers {
 
             var categorias = _uof.CategoriaRepository.GetAll();
 
-            var categoriasDto = categorias.ToCategoriaDTOList;
+            if (categorias is null)
+                return NotFound("Não existem categorias...");
+
+            var categoriasDto = categorias.ToCategoriaDTOList();
 
             return Ok(categoriasDto);
 
