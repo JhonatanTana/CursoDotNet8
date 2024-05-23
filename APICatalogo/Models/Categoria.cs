@@ -6,10 +6,10 @@ using System.Text.Json.Serialization;
 namespace APICatalogo.Models;
 
 [Table("Categorias")] //DataAnnotations
-public class Categorias {
+public class Categoria {
 
-    public Categorias() {
-        Produtos = new Collection<Produtos>();
+    public Categoria() {
+        Produtos = new Collection<Produto>();
     }
 
     [Key] // DataAnnotations
@@ -24,5 +24,5 @@ public class Categorias {
     public string? ImagemUrl { get; set; }
 
     [JsonIgnore] // DataAnnotations
-    public ICollection<Produtos>? Produtos { get; set; }  // Define uma chave estrangeira
+    public ICollection<Produto>? Produtos { get; set; }  // Define uma chave estrangeira
 }

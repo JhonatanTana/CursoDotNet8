@@ -3,7 +3,7 @@ using APICatalogo.Models;
 
 namespace APICatalogo.Repositories;
 
-public class CategoriaRepository : Repository<Categorias>, ICategoriaRepository {
+public class CategoriaRepository : Repository<Categoria>, ICategoriaRepository {
     public CategoriaRepository(AppDbContext context) : base(context) {
     }
 }

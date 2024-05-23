@@ -2,5 +2,5 @@
 
 namespace APICatalogo.Repositories;
 
-public interface ICategoriaRepository : IRepository<Categorias> {
+public interface ICategoriaRepository : IRepository<Categoria> {
 }

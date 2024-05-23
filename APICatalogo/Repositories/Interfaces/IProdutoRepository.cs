@@ -1,7 +1,7 @@
 ﻿using APICatalogo.Models;
 
 namespace APICatalogo.Repositories; 
-public interface IProdutoRepository : IRepository<Produtos> {
+public interface IProdutoRepository : IRepository<Produto> {
 
-    IEnumerable<Produtos> GetProdutosPorCategoria(int id);
+    IEnumerable<Produto> GetProdutosPorCategoria(int id);
 }

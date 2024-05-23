@@ -3,7 +3,7 @@
 namespace APICatalogo.DTOs.Mappings; 
 public static class CategoriaDTOMappingExtensions {
 
-    public static CategoriaDTO? ToCategoriaDTO (this Categorias categoria) {
+    public static CategoriaDTO? ToCategoriaDTO (this Categoria categoria) {
 
         if (categoria is null) {
             
@@ -18,13 +18,13 @@ public static class CategoriaDTOMappingExtensions {
         };
     }
 
-    public static Categorias? ToCategoria(this CategoriaDTO categoriaDto) { 
+    public static Categoria? ToCategoria(this CategoriaDTO categoriaDto) { 
         
         if(categoriaDto is null) {
             return null;
         }
 
-        return new Categorias {
+        return new Categoria {
 
             CategoriaId = categoriaDto.CategoriaId,
             Nome = categoriaDto.Nome,
@@ -32,7 +32,7 @@ public static class CategoriaDTOMappingExtensions {
         };
     }
 
-    public static IEnumerable<CategoriaDTO> ToCategoriaDTOList(this IEnumerable<Categorias> categorias) { 
+    public static IEnumerable<CategoriaDTO> ToCategoriaDTOList(this IEnumerable<Categoria> categorias) { 
         
         if (categorias is null || !categorias.Any()) {
 

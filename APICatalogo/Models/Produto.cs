@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace APICatalogo.Models;
 [Table("Produtos")] // DataAnnotations
-public class Produtos : IValidatableObject {
+public class Produto : IValidatableObject {
 
     [Key] // DataAnnotations
     public int ProdutoId { get; set; }
@@ -30,7 +30,7 @@ public class Produtos : IValidatableObject {
     public DateTime DataCadastro { get; set; }
     public int CategoriaId { get; set; } // Relaciona a chave estrangeira
     [JsonIgnore]
-    public Categorias? Categoria { get; set; }  // Relaciona a chave estrangeira
+    public Categoria? Categoria { get; set; }  // Relaciona a chave estrangeira
 
     public IEnumerable<ValidationResult> Validate(ValidationContext validationContext) {
         

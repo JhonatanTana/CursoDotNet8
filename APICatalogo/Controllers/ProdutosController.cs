@@ -2,6 +2,7 @@
 using APICatalogo.Models;
 using APICatalogo.Repositories;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APICatalogo.Controllers;
@@ -55,7 +56,7 @@ public class ProdutosController : ControllerBase {
         if (produtoDto is null)
             return BadRequest();
 
-        var produto = _mapper.Map<Produtos>(produtoDto);
+        var produto = _mapper.Map<Produto>(produtoDto);
 
         var novoProduto = _uof.ProdutoRepository.Create(produto);
         _uof.Commit();
@@ -66,12 +67,41 @@ public class ProdutosController : ControllerBase {
             new { id = novoProdutoDto.ProdutoId }, novoProdutoDto);
     }
 
+    [HttpPatch("{id}/UpdatePartial")]
+    public ActionResult<ProdutoDTOUpdateResponse> Patch(int id, JsonPatchDocument<ProdutoDTOUpdateRequest> patchProdutoDTO) {
+
+        if(patchProdutoDTO is null || id <= 0) {
+            return BadRequest();
+        }
+
+        var produto = _uof.ProdutoRepository.Get(c => c.ProdutoId == id);
+
+        if (produto is null) {
+            return NotFound();
+        }
+
+        var produtoUpdateRequest = _mapper.Map<ProdutoDTOUpdateRequest>(produto);
+        patchProdutoDTO.ApplyTo(produtoUpdateRequest, ModelState);
+
+        if(!ModelState.IsValid || TryValidateModel(produto)) { 
+
+            return BadRequest(ModelState);
+        }
+
+        _mapper.Map(produtoUpdateRequest, produto);
+        _uof.ProdutoRepository.Update(produto);
+        _uof.Commit();
+
+        return Ok(_mapper.Map<ProdutoDTOUpdateResponse>(produto));
+
+    }
+
     [HttpPut("{id:int}")]
     public ActionResult<ProdutoDTO> Put(int id, ProdutoDTO produtoDto) {
         if (id != produtoDto.ProdutoId)
             return BadRequest();//400
 
-        var produto = _mapper.Map<Produtos>(produtoDto);
+        var produto = _mapper.Map<Produto>(produtoDto);
 
         var produtoAtualizado = _uof.ProdutoRepository.Update(produto);
         _uof.Commit();
