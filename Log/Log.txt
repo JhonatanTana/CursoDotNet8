@@ -277,3 +277,27 @@ Information: 14 - Now listening on: http://localhost:5244
 Information: 0 - Application started. Press Ctrl+C to shut down.
 Information: 0 - Hosting environment: Development
 Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 20101 - Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 20101 - Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
+Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `p`.`ProdutoId`, `p`.`CategoriaId`, `p`.`DataCadastro`, `p`.`Descricao`, `p`.`Estoque`, `p`.`ImagemUrl`, `p`.`Nome`, `p`.`Preco`
+FROM `Produtos` AS `p`
