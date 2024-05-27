@@ -3,6 +3,8 @@ using APICatalogo.Filters;
 using APICatalogo.Repositories;
 using APICatalogo.DTOs;
 using APICatalogo.DTOs.Mappings;
+using APICatalogo.Pagination;
+using Newtonsoft.Json;
 
 namespace APICatalogo.Controllers {
 
@@ -33,6 +35,27 @@ namespace APICatalogo.Controllers {
 
             return Ok(categoriasDto);
 
+        }
+
+        [HttpGet("pagination")]
+        public ActionResult<IEnumerable<CategoriaDTO>> Get([FromQuery] CategoriaParameters categoriaParameters) {
+
+            var categorias = _uof.CategoriaRepository.GetCategorias(categoriaParameters);
+
+            var metadata = new {
+                categorias.TotalCount,
+                categorias.PageSize,
+                categorias.CurrentPage,
+                categorias.TotalPages,
+                categorias.HasNext,
+                categorias.HasPrevious
+            };
+
+            Response.Headers.Append("X-Pagination", JsonConvert.SerializeObject(metadata));
+
+            var categoriasDto = categorias.ToCategoriaDTOList();
+
+            return Ok(categoriasDto);
         }
 
         // Obtem as categoria por ID
