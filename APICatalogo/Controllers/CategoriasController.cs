@@ -5,6 +5,7 @@ using APICatalogo.DTOs;
 using APICatalogo.DTOs.Mappings;
 using APICatalogo.Pagination;
 using Newtonsoft.Json;
+using APICatalogo.Models;
 
 namespace APICatalogo.Controllers {
 
@@ -19,6 +20,23 @@ namespace APICatalogo.Controllers {
 
             _logger = logger;
             _uof = uof;
+        }
+
+                private ActionResult<IEnumerable<CategoriaDTO>> ObterCategorias(PagedList<Categoria> categorias) {
+            var metadata = new {
+                categorias.TotalCount,
+                categorias.PageSize,
+                categorias.CurrentPage,
+                categorias.TotalPages,
+                categorias.HasNext,
+                categorias.HasPrevious
+            };
+
+            Response.Headers.Append("X-Pagination", JsonConvert.SerializeObject(metadata));
+
+            var categoriasDto = categorias.ToCategoriaDTOList();
+
+            return Ok(categoriasDto);
         }
 
         // Obtem todas as categorias
@@ -42,20 +60,15 @@ namespace APICatalogo.Controllers {
 
             var categorias = _uof.CategoriaRepository.GetCategorias(categoriaParameters);
 
-            var metadata = new {
-                categorias.TotalCount,
-                categorias.PageSize,
-                categorias.CurrentPage,
-                categorias.TotalPages,
-                categorias.HasNext,
-                categorias.HasPrevious
-            };
+            return ObterCategorias(categorias);
+        }
 
-            Response.Headers.Append("X-Pagination", JsonConvert.SerializeObject(metadata));
+        [HttpGet("filter/nome/pagination")]
+        public ActionResult<IEnumerable<CategoriaDTO>> GetCategoriasFiltradas([FromQuery] CategoriasFiltroNome categoriasFiltro) {
 
-            var categoriasDto = categorias.ToCategoriaDTOList();
+            var categoriasFiltradas = _uof.CategoriaRepository.GetCategoriasFiltroNome(categoriasFiltro);
 
-            return Ok(categoriasDto);
+            return ObterCategorias(categoriasFiltradas);
         }
 
         // Obtem as categoria por ID
