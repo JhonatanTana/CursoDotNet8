@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/O4MhG/q71LEzWS935pyIHkI2Sz2UC5qDc+BrKy7f/Z8QuA/JmCm9rKLYgTLJgrDtkBtUcxCpIJ3zxvHjcOVnQ==",
+  "dgSpecHash": "lRSzP4ktdckhdhOSguWSpqZbq1H+zbPyl1Gcl1OG0/MfF5aK1slkcjzHcwlrx5LtYTCoFJtbvNRj6Tnb+bmMTw==",
   "success": true,
   "projectFilePath": "D:\\Documentos\\Documents\\VSCode\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
   "expectedPackageFiles": [
@@ -59,7 +59,9 @@
     "C:\\Users\\JhonatanTana\\.nuget\\packages\\system.text.encoding.codepages\\6.0.0\\system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "C:\\Users\\JhonatanTana\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\JhonatanTana\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512",
-    "C:\\Users\\JhonatanTana\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512"
+    "C:\\Users\\JhonatanTana\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
+    "C:\\Users\\JhonatanTana\\.nuget\\packages\\x.pagedlist\\9.1.2\\x.pagedlist.9.1.2.nupkg.sha512",
+    "C:\\Users\\JhonatanTana\\.nuget\\packages\\x.pagedlist.mvc.core\\9.1.2\\x.pagedlist.mvc.core.9.1.2.nupkg.sha512"
   ],
   "logs": []
 }

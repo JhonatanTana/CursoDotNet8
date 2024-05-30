@@ -1,6 +1,7 @@
 ﻿using APICatalogo.Context;
 using APICatalogo.Models;
 using APICatalogo.Pagination;
+using X.PagedList;
 
 namespace APICatalogo.Repositories;
 public class ProdutoRepository : Repository<Produto>, IProdutoRepository {
@@ -9,16 +10,19 @@ public class ProdutoRepository : Repository<Produto>, IProdutoRepository {
 
     public ProdutoRepository(AppDbContext context): base (context) { }
 
-    public PagedList<Produto> GetProdutos(ProdutosParameters produtoParams) {
+    public async Task<IPagedList<Produto>>GetProdutosAsync(ProdutosParameters produtoParams) {
 
-        var produtos = GetAll().OrderBy(p => p.ProdutoId).AsQueryable();
-        var produtosOrdenados = PagedList<Produto>.ToPageList(produtos, produtoParams.PageNumber, produtoParams.PageSize);
-        return produtosOrdenados;
+        var produtos = await GetAllAsync();
+
+        var produtosOrdenados = produtos.OrderBy(p => p.ProdutoId).AsQueryable();
+
+        var resultado = await produtosOrdenados.ToPagedListAsync(produtoParams.PageNumber, produtoParams.PageSize);
+        return resultado;
     }
 
-    public PagedList<Produto> GetProdutosFiltroPreco(ProdutosFiltroPreco produtosFiltroParams) {
+    public async Task<IPagedList<Produto>> GetProdutosFiltroPrecoAsync(ProdutosFiltroPreco produtosFiltroParams) {
 
-        var produtos = GetAll().AsQueryable();
+        var produtos = await GetAllAsync();
 
         if (produtosFiltroParams.Preco.HasValue && !string.IsNullOrEmpty(produtosFiltroParams.PrecoCriterio)) {
 
@@ -36,20 +40,15 @@ public class ProdutoRepository : Repository<Produto>, IProdutoRepository {
             }
         }
 
-        var produtosFiltrados = PagedList<Produto>.ToPageList(produtos, produtosFiltroParams.PageNumber, produtosFiltroParams.PageSize);
+        var produtosFiltrados = await produtos.ToPagedListAsync(produtosFiltroParams.PageNumber, produtosFiltroParams.PageSize);
         return produtosFiltrados;
     }
 
-    /*public IEnumerable<Produto> GetProdutos(ProdutosParameters produtoParams) {
+    public async Task<IEnumerable<Produto>> GetProdutosPorCategoriaAsync(int id) {
 
-        return GetAll().OrderBy(p => p.Nome)
-            .Skip((produtoParams.PageNumber - 1)* produtoParams.PageSize)
-            .Take(produtoParams.PageSize)
-            .ToList();
-    }*/
+        var produtos = await GetAllAsync();
 
-    public IEnumerable<Produto> GetProdutosPorCategoria(int id) {
-        
-        return GetAll().Where(c => c.CategoriaId == id);
+        var produtosCategoria = produtos.Where(c => c.CategoriaId == id);
+        return produtosCategoria;
     }
 }

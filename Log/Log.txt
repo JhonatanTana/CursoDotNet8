@@ -367,3 +367,21 @@ FROM `Categorias` AS `c`
 Information: 20101 - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
 SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
 FROM `Categorias` AS `c`
+Information: 14 - Now listening on: https://localhost:7156
+Information: 14 - Now listening on: http://localhost:5244
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Documentos\Documents\VSCode\APICatalogo\APICatalogo
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 16:55:27
+Information: 0 - ModelState : True
+Information: 0 - ###################################
+Information: 20101 - Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT `c`.`CategoriaId`, `c`.`ImagemUrl`, `c`.`Nome`
+FROM `Categorias` AS `c`
+Information: 0 - ### Executando -> OnActionExecuting
+Information: 0 - ###################################
+Information: 0 - 16:55:28
+Information: 0 - StatusCode : 200
+Information: 0 - ###################################
