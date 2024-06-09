@@ -7,6 +7,7 @@ using APICatalogo.Pagination;
 using Newtonsoft.Json;
 using APICatalogo.Models;
 using X.PagedList;
+using Microsoft.AspNetCore.Authorization;
 
 namespace APICatalogo.Controllers {
 
@@ -40,8 +41,8 @@ namespace APICatalogo.Controllers {
             return Ok(categoriasDto);
         }
 
-        // Obtem todas as categorias
-        [HttpGet]
+        [HttpGet] // Obtem todas as categorias
+        [Authorize]
         [ServiceFilter(typeof(ApiLoggingFilter))]
         public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get() {
 
@@ -56,7 +57,7 @@ namespace APICatalogo.Controllers {
 
         }
 
-        [HttpGet("pagination")]
+        [HttpGet("pagination")] // Paginação
         public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get([FromQuery] CategoriaParameters categoriaParameters) {
 
             var categorias = await _uof.CategoriaRepository.GetCategoriasAsync(categoriaParameters);
@@ -64,7 +65,7 @@ namespace APICatalogo.Controllers {
             return ObterCategorias(categorias);
         }
 
-        [HttpGet("filter/nome/pagination")]
+        [HttpGet("filter/nome/pagination")] // Filtro por nome
         public async Task<ActionResult<IEnumerable<CategoriaDTO>>> GetCategoriasFiltradas([FromQuery] CategoriasFiltroNome categoriasFiltro) {
 
             var categoriasFiltradas = await _uof.CategoriaRepository.GetCategoriasFiltroNomeAsync(categoriasFiltro);
@@ -72,8 +73,7 @@ namespace APICatalogo.Controllers {
             return ObterCategorias(categoriasFiltradas);
         }
 
-        // Obtem as categoria por ID
-        [HttpGet("{id:int}", Name = "ObterCategoria")]
+        [HttpGet("{id:int}", Name = "ObterCategoria")] // Obtem as categoria por ID
         public async Task<ActionResult<CategoriaDTO>> Get(int id) {
 
             var categoria = await _uof.CategoriaRepository.GetAsync(c => c.CategoriaId == id);
@@ -90,8 +90,7 @@ namespace APICatalogo.Controllers {
 
         }
 
-        // Adiciona categorias
-        [HttpPost]
+        [HttpPost] // Adiciona categorias
         public async Task<ActionResult<CategoriaDTO>> Post(CategoriaDTO categorias) {
 
             if (categorias is null) {
@@ -112,8 +111,7 @@ namespace APICatalogo.Controllers {
 
         }
 
-        // Atualiza a categoria
-        [HttpPut("{id int}")]
+        [HttpPut("{id int}")] // Atualiza a categoria
         public async Task<ActionResult<CategoriaDTO>> Put(int id, CategoriaDTO categoriaDto) {
 
             if (categoriaDto is null) {
@@ -137,8 +135,8 @@ namespace APICatalogo.Controllers {
 
         }
 
-        // Deleta as categorias
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id:int}")] // Deleta as categorias
+        [Authorize(Policy = "AdminOnly")]
         public async Task<ActionResult<CategoriaDTO>> Delete(int id) {
 
             var categoria = await _uof.CategoriaRepository.GetAsync(c => c.CategoriaId == id);
